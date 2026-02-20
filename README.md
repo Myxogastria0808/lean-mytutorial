@@ -94,3 +94,7 @@ elan ... lean version manager
 ## References
 
 https://chatgpt.com/c/6991763f-ee3c-83aa-ba25-b4f7a4ce51ab
+
+## Lean References
+
+https://speakerdeck.com/unaoya/zheng-ming-zhi-yuan-xi-leanniru-men-siyou
