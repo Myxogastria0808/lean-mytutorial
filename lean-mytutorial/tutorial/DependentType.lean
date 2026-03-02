@@ -149,4 +149,3 @@ def MyList' (α : Type u) : Type u := List α -- `MyList'`は型を引数に取�
 #check MyList' -- `MyList'`の型は `Type u → Type u` である
 -- output: `MyList'.{u} (α : Type u) : Type u`
 #check MyList' Nat -- `MyList' Nat`の型は `Type` (Type 1) である
-

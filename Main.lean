@@ -17,5 +17,4 @@
 
 import «lean-mytutorial».tutorial.DependentType
 
-def main : IO Unit :=
-  IO.println s!"Hello, world! (Entry Point)"
+def main : IO Unit := IO.println s!"Hello, world! (Entry Point)"
