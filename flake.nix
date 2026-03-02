@@ -3,6 +3,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
+    # nixvim
+    nixvimConfig.url = "github:Myxogastria0808/nix-flakes-nixvim/main";
   };
 
   outputs =
@@ -20,6 +22,8 @@
             lean4
             # lean version manager
             elan
+            # editor
+            inputs.nixvimConfig.packages.${system}.default
           ];
         };
       }

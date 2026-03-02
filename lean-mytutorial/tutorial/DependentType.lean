@@ -1,6 +1,6 @@
 -- 型理論
 /-
-全ての 式 あるいは 公 は、それに関連した方を持つ
+全ての 式 あるいは 項 は、それに関連した型を持つ
 -/
 
 -- 単純型理論 (Simple Type Theory)
@@ -106,7 +106,7 @@ def MyNat : Type := Nat -- `MyNat`は型で、値は`Nat`である
 #check MyNat -- `MyNat`の型はTypeである
 def MyList : Type → Type := List -- `MyList`は型を引数に取る型で、値は`List`である
 #check MyList -- `MyList`の型はType → Typeである
-#check MyList Nat -- `MyList Nat`の型はTypeである
+    #check MyList Nat -- `MyList Nat`の型はTypeである
 
 -- 宇宙を表現するには
 /-
@@ -149,3 +149,4 @@ def MyList' (α : Type u) : Type u := List α -- `MyList'`は型を引数に取�
 #check MyList' -- `MyList'`の型は `Type u → Type u` である
 -- output: `MyList'.{u} (α : Type u) : Type u`
 #check MyList' Nat -- `MyList' Nat`の型は `Type` (Type 1) である
+
