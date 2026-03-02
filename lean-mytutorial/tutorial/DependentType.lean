@@ -149,3 +149,45 @@ def MyList' (α : Type u) : Type u := List α -- `MyList'`は型を引数に取�
 #check MyList' -- `MyList'`の型は `Type u → Type u` である
 -- output: `MyList'.{u} (α : Type u) : Type u`
 #check MyList' Nat -- `MyList' Nat`の型は `Type` (Type 1) である
+
+-- ラムダ抽象 (無名関数)
+/-
+leanのラムダ抽象は、`fun` または `λ` キーワードを使用して定義される。
+-/
+-- 括弧は省略可能
+-- λ (<入力引数の名前> : <入力引数の型名) => <関数の出力を定義する式>
+#check λ (x : Nat) => x + 1
+#eval (λ (x : Nat) => x + 1) 5 -- `λ (x : Nat) => x + 1`に5を適用すると、結果は6である
+#check λ x : Nat => x + 1
+#eval (λ x : Nat => x + 1) 5 -- `λ x : Nat => x + 1`に5を適用すると、結果は6である
+
+-- 括弧は省略可能
+-- λ (<入力引数の名前> : <入力引数の型名) => <関数の出力を定義する式>
+#check λ (x : Nat) => x + 1
+#eval (λ (x : Nat) => x + 1) 5 -- `λ (x : Nat) => x + 1`に5を適用すると、結果は6である
+#check λ x : Nat => x + 1
+#eval (λ x : Nat => x + 1) 5 -- `λ x : Nat => x + 1`に5を適用すると、結果は6である
+
+-- 複数引数を取るラムダ抽象
+-- パターン1： 愚直に複数の引数を取るような表現
+#check λ (x : Nat) (y : Nat) => x + y
+#eval (λ (x : Nat) (y : Nat) => x + y) 3 4  -- `λ (x : Nat) (y : Nat) => x + y`に3と4を適用すると、結果は7である
+-- パターン2： カリー化された表現
+#check λ x : Nat => λ y : Nat => x + y
+#eval (λ x : Nat => λ y : Nat => x + y) 3 4 -- `λ x : Nat => λ y : Nat => x + y`に3と4を適用すると、結果は7である
+-- 関数を出力する定義の式によって、入力引数の型が推論できる場合もある
+#check λ x => λ y => x + y
+#eval (λ x => λ y => x + y) 3 4 -- `λ x => λ y => x + y`に3と4を適用すると、結果は7である
+
+-- 関数を入力引数に取ることもできる。
+def f (n : Nat) : String := toString n
+def g (h : Nat -> String) : String := h 5
+
+#check λ (f : Nat -> String) => λ (g : (Nat -> String) -> String) => g f
+#eval (λ (f : Nat -> String) => λ (g : (Nat -> String) -> String) => g f) f g -- `λ f : Nat -> String => g : (Nat -> String) -> String => g f`に関数fを適用すると、結果は"5"である
+
+
+
+
+
+
