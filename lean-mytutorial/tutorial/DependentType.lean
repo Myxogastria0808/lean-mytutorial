@@ -184,10 +184,18 @@ def f (n : Nat) : String := toString n
 def g (h : Nat -> String) : String := h 5
 
 #check λ (f : Nat -> String) => λ (g : (Nat -> String) -> String) => g f
-#eval (λ (f : Nat -> String) => λ (g : (Nat -> String) -> String) => g f) f g -- `λ f : Nat -> String => g : (Nat -> String) -> String => g f`に関数fを適用すると、結果は"5"である
+#eval (λ (f : Nat -> String) => λ (g : (Nat -> String) -> String) => g f) f g -- g ( f (5)) の結果は "5" である
 
+-- 型を入力引数に取ることもできる。
+def u (x : Nat) : Nat := x + 1
+def v (x : Nat) : Nat := x * 2
+#eval (λ (α β γ : Type 0) (u : β → γ) (v : α → β) (x : α) => (u (v x))) Nat Nat Nat u v 3 -- u (v (3)) の結果は7である
+    
+-- defキーワードとラムダ抽象のの関係
+/- 
+def キーワードを使用して作成した関数は、名前付きのラムダ抽象であると考えることができる。
+従って、以下のような表現も可能である。
+-/
+def myLambda : Nat -> Nat := λ x => x + 1
 
-
-
-
-
+-- let式 (ローカルな定義)
