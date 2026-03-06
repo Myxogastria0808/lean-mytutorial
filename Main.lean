@@ -15,6 +15,7 @@
 -- #check A
 -- #check B
 
+import «lean-mytutorial».tutorial.SimpleType
 import «lean-mytutorial».tutorial.DependentType
 
 def main : IO Unit := IO.println s!"Hello, world! (Entry Point)"

@@ -1,4 +1,8 @@
-#!bin/bash
+#!/bin/bash
 
-lake build
-lake exe main
+function main() {
+	lake build
+	lake exe main
+}
+
+main
