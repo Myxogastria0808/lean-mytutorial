@@ -101,11 +101,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1772791394,
-        "narHash": "sha256-EaJ0/elo8Je3aKK/8T/IHMijpLezlA+0XCzbvO3rLwM=",
+        "lastModified": 1772791719,
+        "narHash": "sha256-Qt5dBOtwXp007gu24x39wnsXN75jQS4KurbAxuV969s=",
         "owner": "Myxogastria0808",
         "repo": "nix-flakes-nixvim",
-        "rev": "0d6990e8f59964c31e0c1ca5b5065dc373cec4ee",
+        "rev": "143568a065d5dfa88abeeeb4062bd35f5b880e19",
         "type": "github"
       },
       "original": {
